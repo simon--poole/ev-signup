@@ -3,7 +3,7 @@ var mongoose = require( 'mongoose' );
 var bodyparser = require( 'body-parser' )
 var Signups = require( './signup_model.js' );
 
-express.use( bodyParser.urlencoded( {
+express.use( bodyparser.urlencoded( {
     extended: true
 } ) )
 express.use( bodyparser.json() );

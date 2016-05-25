@@ -36,8 +36,7 @@ $( document )
                     .length > 0 ) data.comments = comments;
                 $.post( {
                         url: "https://ev-signup.herokuapp.com/signup",
-                        data: data,
-                        dataType: 'application/json'
+                        data: data
                     } )
                     .done( function() {
                         $( '#loader' )
