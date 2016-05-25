@@ -4,7 +4,7 @@
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="assets/style.css"  media="screen,projection"/>
-        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link rel="icon" type="image/png" href="assets/favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>
             Beta Applications - Eventvods.com
@@ -18,34 +18,35 @@
                 </h4>
             </div>
             <div class="modal-content flow-text">
-                <form class="row" id="form">
+                <form class="row" id="form" novalidate>
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" required/>
+                        <input id="email" type="email" class="validate" tabindex="1" required/>
                         <label for="email">
                             Email Address
                         </label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="comments" class="materialize-textarea" length="120"></textarea>
+                        <textarea id="comments" class="materialize-textarea" tabindex="2" length="120"></textarea>
                         <label for="comments">
                             Why should we pick you? (Optional)
                         </label>
                     </div>
                     <div class="input-field col s12">
                         <p>
-                            <input type="checkbox" id="tos" required/>
+                            <input type="checkbox" id="tos" tabindex="3" required/>
                             <label for="tos">
                                 I agree that Eventvods may send me one-off promotional emails.
                             </label>
                         </p>
                     </div>
-                    <div class="input-field col s12 center-align"><br />
-                        <a class="waves-effect waves-light btn" id="submit">
+                    <div class="input-field col s12 center-align">
+                        <br />
+                        <button class="waves-effect waves-light btn" id="submit" tabindex="4">
                             <i class="material-icons right">
                                 send
                             </i>
                             Submit
-                        </a>
+                        </button>
                     </div>
                 </form>
                 <div class="row" id="loader">
@@ -77,9 +78,13 @@
                         <p>
                             We'll be in touch!
                         </p>
-                        <p><small>
-                            We'll be selecting beta testers in several waves, starting off with a select few. <br /> Over time, we'll be increasing the number of testers so don't stress if you're not invited at first.
-                        </small></p>
+                        <p>
+                            <small>
+                                We'll be selecting beta testers in several waves, starting off with a select few.
+                                <br />
+                                Over time, we'll be increasing the number of testers so don't stress if you're not invited at first.
+                            </small>
+                        </p>
                     </div>
                 </div>
                 <div class="row" id="results-error">
@@ -88,11 +93,18 @@
                             Oops! Something broke!
                         </h4>
                         <p>
-                            Something went wrong submitting your application. Please <a href="/beta">try again</a>, or if the error persists <a href="https://www.reddit.com/message/compose/?to=/r/eventvods">get in contact</a>.
+                            Something went wrong submitting your application. Please
+                            <a href="/beta">
+                                try again
+                            </a>
+                            , or if the error persists
+                            <a href="https://www.reddit.com/message/compose/?to=/r/eventvods">
+                                get in contact
+                            </a>
+                            .
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </body>

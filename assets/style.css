@@ -35,6 +35,10 @@ body {
   -ms-filter: blur(10px);
   opacity: 0.5 !important; }
 
+@supports (-ms-accelerator: true) {
+  .lean-overlay {
+    filter: none; } }
+
 .input-field label {
   text-transform: uppercase;
   color: #3B3B61; }

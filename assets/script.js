@@ -6,8 +6,9 @@ $( document )
                 in_duration: 0, // Transition in duration
                 out_duration: 0, // Transition out duration
             } );
-        $( '#submit' )
-            .click( function() {
+        $( '#form' )
+            .submit( function( evt ) {
+                evt.preventDefault();
                 if ( !$( '#email' )[ 0 ].checkValidity() ) {
                     $( 'body' )
                         .scrollTo( '#email' );
@@ -18,8 +19,7 @@ $( document )
                 if ( !$( '#tos' )[ 0 ].checkValidity() ) {
                     $( 'body' )
                         .scrollTo( '#tos' );
-                    $( '#tos' )
-                        .focus();
+                    $( '#tos' )[ 0 ].focus();
                     return;
                 }
                 $( '#form' )
@@ -28,7 +28,7 @@ $( document )
                     .slideDown();
                 var data = {
                     email: $( '#email' )
-                        .val(),
+                        .val()
                 }
                 var comments = $( '#comments' )
                     .val();

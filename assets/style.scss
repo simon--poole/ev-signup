@@ -43,6 +43,11 @@ body {
 	-ms-filter: blur($modal-blur); 
 	opacity: 0.5!important;
 }
+@supports (-ms-accelerator:true) { 
+	.lean-overlay {
+		filter: none;
+	}
+}
 .input-field label {
 	text-transform: uppercase;
 	color: $primary;
