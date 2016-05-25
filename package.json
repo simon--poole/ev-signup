@@ -1,0 +1,21 @@
+{
+  "name": "ev-signup",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon--poole/ev-signup.git"
+  },
+  "author": "Simon Poole <simon@eventvods.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/simon--poole/ev-signup/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "indicative": "^2.1.0",
+    "mongoose": "^4.4.19"
+  }
+}
