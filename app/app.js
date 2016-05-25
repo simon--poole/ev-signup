@@ -16,8 +16,8 @@ express.post( '/signup', function( req, res ) {
                 else res.sendStatus( '200' );
             } );
         } )
-        .catch( function() {
-            res.sendStatus( '400' );
+        .catch( function(errs) {
+            res.status('400').json(errs);
         } )
 } );
 express.listen( process.env.PORT );

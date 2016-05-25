@@ -31,7 +31,6 @@ $( document )
                 }
                 var comments = $('#comments').val();
                 if($.trim(comments).length > 0) data.comments = comments;
-
                 $.post('https://ev-signup.herokuapp.com/signup', JSON.stringify(data))
                 	.done(function(){
                 		$('#loader').slideUp();
