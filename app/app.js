@@ -3,6 +3,11 @@ var mongoose = require( 'mongoose' );
 var bodyparser = require( 'body-parser' )
 var Signups = require( './signup_model.js' );
 express.use( bodyparser.json() )
+express.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", req.protocol+"://eventvods.com");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 express.post( '/signup', function( req, res ) {
     Signups.validate( req.body )
         .then( function() {
