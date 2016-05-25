@@ -31,12 +31,16 @@ $( document )
                 }
                 var comments = $('#comments').val();
                 if($.trim(comments).length > 0) data.comments = comments;
-                $.post('https://ev-signup.herokuapp.com/signup', JSON.stringify(data))
+                console.log(data);
+                data = JSON.stringify(data);
+                console.log(data);
+                $.post('https://ev-signup.herokuapp.com/signup', data)
                 	.done(function(){
                 		$('#loader').slideUp();
                 		$('#results-success').slideDown();
                 	})
-                	.fail(function(){
+                	.fail(function(res){
+                		console.log(res);
                 		$('#loader').slideUp();
                 		$('#results-error').slideDown();
                 	})

@@ -9,6 +9,7 @@ express.use(function(req, res, next) {
   next();
 });
 express.post( '/signup', function( req, res ) {
+    console.log(req.body);
     Signups.validate( req.body )
         .then( function() {
             Signups.create( req.body, function( err, data ) {
