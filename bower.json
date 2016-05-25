@@ -1,0 +1,21 @@
+{
+  "name": "ev-signup",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Simon Poole <simon@eventvods.com>"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/simon--poole/ev-signup",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  }
+}

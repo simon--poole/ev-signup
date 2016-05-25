@@ -1,0 +1,48 @@
+body {
+  background: #3B3B61; }
+
+.modal {
+  width: 40%;
+  border-radius: 0;
+  border-bottom: 5px solid #10D97D;
+  overflow-y: visible;
+  max-height: none; }
+  .modal .modal-title {
+    background: #3B3B61;
+    margin-top: 10px; }
+    .modal .modal-title h4 {
+      margin: 0;
+      color: #FFF; }
+  .modal:before {
+    content: " ";
+    display: block;
+    margin: -60px auto auto auto;
+    height: 48px;
+    background: url("logo.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%; }
+
+.lean-overlay {
+  background: url("bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  opacity: 0.5 !important; }
+
+.input-field label {
+  text-transform: uppercase;
+  color: #3B3B61; }
+
+.btn {
+  background: #3B3B61; }
+  .btn:hover {
+    background: #10D97D; }
+
+#loader, #results-success, #results-error {
+  display: none; }
