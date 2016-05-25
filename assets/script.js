@@ -27,22 +27,30 @@ $( document )
                 $( '#loader' )
                     .slideDown();
                 var data = {
-                	email: $('#email').val(),
+                    email: $( '#email' )
+                        .val(),
                 }
-                var comments = $('#comments').val();
-                if($.trim(comments).length > 0) data.comments = comments;
-                console.log(data);
-                data = JSON.stringify(data);
-                console.log(data);
-                $.post('https://ev-signup.herokuapp.com/signup', data)
-                	.done(function(){
-                		$('#loader').slideUp();
-                		$('#results-success').slideDown();
-                	})
-                	.fail(function(res){
-                		console.log(res);
-                		$('#loader').slideUp();
-                		$('#results-error').slideDown();
-                	})
+                var comments = $( '#comments' )
+                    .val();
+                if ( $.trim( comments )
+                    .length > 0 ) data.comments = comments;
+                $.post( {
+                        url: "https://ev-signup.herokuapp.com/signup",
+                        data: data,
+                        dataType: 'application/json'
+                    } )
+                    .done( function() {
+                        $( '#loader' )
+                            .slideUp();
+                        $( '#results-success' )
+                            .slideDown();
+                    } )
+                    .fail( function( res ) {
+                        console.log( res );
+                        $( '#loader' )
+                            .slideUp();
+                        $( '#results-error' )
+                            .slideDown();
+                    } )
             } )
     } )
