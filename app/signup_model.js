@@ -13,7 +13,8 @@ var signupSchema = mongoose.Schema({
 });
 
 var validator = {
-  email: 'required|email'
+  email: 'required|email',
+  comments: 'max:500'
 }
 
 module.exports = mongoose.model('Signup', signupSchema);

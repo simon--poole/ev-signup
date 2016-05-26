@@ -7,7 +7,7 @@
         <link rel="icon" type="image/png" href="assets/favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>
-            Beta Applications - Eventvods.com
+            Eventvods - Beta Application
         </title>
     </head>
     <body>
@@ -20,13 +20,13 @@
             <div class="modal-content flow-text">
                 <form class="row" id="form" novalidate>
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" tabindex="1" required/>
+                        <input id="email" type="email" class="validate" tabindex="1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required/>
                         <label for="email">
                             Email Address
                         </label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="comments" class="materialize-textarea" tabindex="2" length="120"></textarea>
+                        <textarea id="comments" class="materialize-textarea" tabindex="2" length="500" max="500"></textarea>
                         <label for="comments">
                             Why should we pick you? (Optional)
                         </label>
@@ -35,7 +35,7 @@
                         <p>
                             <input type="checkbox" id="tos" tabindex="3" required/>
                             <label for="tos">
-                                I agree that Eventvods may send me one-off promotional emails.
+                                I agree that Eventvods may send me occasional promotional emails.
                             </label>
                         </p>
                     </div>

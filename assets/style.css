@@ -1,8 +1,23 @@
 body {
   background: #3B3B61; }
 
+@media only screen and (min-width: 993px) {
+  .modal {
+    width: 40%; } }
+
+@media only screen and (max-width: 992px) {
+  .modal {
+    width: 60%; } }
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 80%; } }
+
+@media only screen and (max-width: 360px) {
+  .modal {
+    width: 100%; } }
+
 .modal {
-  width: 40%;
   border-radius: 0;
   border-bottom: 5px solid #10D97D;
   overflow-y: visible;

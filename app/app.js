@@ -20,8 +20,7 @@ express.post( '/signup', function( req, res ) {
             } );
         } )
         .catch( function( errs ) {
-            res.status( '400' )
-                .json( errs );
+            res.sendStatus( '400' );
         } )
 } );
 express.listen( process.env.PORT );
