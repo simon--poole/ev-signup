@@ -1,9 +1,18 @@
 var mongoose = require('mongoose');
 var Indicative = require('indicative');
+var shortid = require('shortid');
 var signupSchema = mongoose.Schema({
     email: {
     	type: String,
     	required: true
+    },
+    confirmed: {
+        type: Boolean,
+        default: false
+    },
+    code: {
+        type: String,
+        default: shortid.generate()
     },
     timestamp: {
    		type: Date,
