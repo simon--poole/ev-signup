@@ -17,6 +17,7 @@
     "express": "^4.13.4",
     "indicative": "^2.1.0",
     "mongoose": "^4.4.19",
+    "q": "^1.4.1",
     "sendgrid": "^3.0.5",
     "shortid": "^2.2.6"
   }
