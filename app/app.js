@@ -32,7 +32,8 @@ express.post('/signup', function(req, res) {
 });
 express.get('/verify/:id/:code', function(req, res) {
     Signups.findById(req.params.id, function(err, doc){
-        if (err) res.sendStatus('500');
+        if (err) res.send('Sorry, something went wrong.');
+        if(!doc) res.send('Invalid verification code. Please double check your email for the correct link.');
         if(req.params.code === doc.code){
             doc.confirmed = true;
             doc.save(function(err){
