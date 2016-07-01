@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <link type="text/css" rel="stylesheet" href="../bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="../assets/style.css"  media="screen,projection"/>
-        <link rel="icon" type="image/png" href="../assets/favicon.png"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>
-            Eventvods - Beta Application
-        </title>
-    </head>
-    <body>
-        <div id="modal" class="modal">
-            <div class="modal-title modal-content">
-                <h4 class="flow-text">
+
+<head>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="../bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="screen,projection" />
+	<link rel="icon" type="image/png" href="../assets/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Eventvods - Beta Application
+	</title>
+</head>
+
+<body>
+	<div class="modal" id="modal">
+		<img class="modal-logo" src="../assets/logo.png" />
+		<div class="modal-wrapper z-depth-4">
+			<div class="modal-title modal-content">
+				<h4 class="flow-text">
                     Beta Tester Application
                 </h4>
-            </div>
-            <div class="modal-content flow-text">
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <h4>
+			</div>
+			<div class="modal-content flow-text">
+				<div class="row">
+					<div class="col s12 center-align">
+						<h4>
                             Thank you for applying
                         </h4>
-                        <p>
-                            We'll be in touch!
-                        </p>
-                        <p>
-                            <small>
+						<p>
+							We'll be in touch!
+						</p>
+						<p>
+							<small>
                                 Keep checking your email. We'll be gradually increasing our number of testers in waves, so don't be worry if you're not in the first batch!
                             </small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script type="text/javascript" src="../bower_components/jquery/dist//jquery.min.js">
-    </script>
-    <script type="text/javascript" src="../bower_components/Materialize/dist/js/materialize.min.js">
-    </script>
-    <script>
-        $( '#modal' )
-            .openModal( {
-                dismissible: false, // Modal can be dismissed by clicking outside of the modal
-                in_duration: 0, // Transition in duration
-                out_duration: 0, // Transition out duration
-            } );
-    </script>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../bower_components/jquery/dist//jquery.min.js">
+</script>
+<script type="text/javascript" src="../bower_components/Materialize/dist/js/materialize.min.js">
+</script>
+<script>
+	$('#modal')
+		.openModal({
+			dismissible: false, // Modal can be dismissed by clicking outside of the modal
+			in_duration: 0, // Transition in duration
+			out_duration: 0, // Transition out duration
+		});
+</script>
+
 </html>

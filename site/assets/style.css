@@ -1,67 +1,89 @@
 body {
-  background: #3B3B61; }
-
-@media only screen and (min-width: 993px) {
-  .modal {
-    width: 40%; } }
-
-@media only screen and (max-width: 992px) {
-  .modal {
-    width: 60%; } }
-
-@media only screen and (max-width: 600px) {
-  .modal {
-    width: 80%; } }
-
-@media only screen and (max-width: 360px) {
-  .modal {
-    width: 100%; } }
-
+  background: #3C3C62;
+}
 .modal {
   border-radius: 0;
-  border-bottom: 5px solid #10D97D;
   overflow-y: visible;
-  max-height: none; }
-  .modal .modal-title {
-    background: #3B3B61;
-    margin-top: 10px; }
-    .modal .modal-title h4 {
-      margin: 0;
-      color: #FFF; }
-  .modal:before {
-    content: " ";
-    display: block;
-    margin: -60px auto auto auto;
-    height: 48px;
-    background: url("logo.png");
-    background-position: center top;
-    background-repeat: no-repeat;
-    width: 100%; }
-
+  max-height: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+}
+.modal > img {
+  margin: auto;
+  max-height: 100px;
+}
+.modal > .modal-wrapper {
+  background: #fff;
+  border-bottom: 5px solid #0CD97E;
+  color: #3C3C62;
+  text-align: left;
+}
+.modal > .modal-wrapper > .modal-title {
+  background: #3C3C62;
+  color: #fff;
+}
+.modal > .modal-wrapper > .modal-title > h4 {
+  margin-bottom: 0;
+}
+.modal h5 {
+  padding-bottom: 20px;
+}
+.modal .buttons {
+  padding-top: 25px;
+}
+.modal .btn {
+  width: 100%;
+  font-size: 18px;
+  background: #0CD97E;
+}
+.modal .btn.modal-close {
+  background: #3C3C62;
+}
+.modal label {
+  color: #3C3C62;
+}
+.modal .input-field label.click-through {
+  pointer-events: none;
+}
+.modal p label.snug {
+  top: -30px;
+}
+.modal p label.snug.left {
+  float: left;
+}
+.modal p label.snug.right {
+  float: right;
+}
+.modal p label.snug:before {
+  top: 2px!important;
+}
+.modal p label.snug:after {
+  top: 2px!important;
+  border-color: #0CD97E;
+  background-color: #0CD97E;
+}
 .lean-overlay {
-  background: url("bg.jpg");
+  background: url("modal.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  opacity: 0.5 !important; }
-
-@supports (-ms-accelerator: true) {
-  .lean-overlay {
-    filter: none; } }
-
+}
 .input-field label {
   text-transform: uppercase;
-  color: #3B3B61; }
-
+  color: #3C3C62;
+}
 .btn {
-  background: #3B3B61; }
-  .btn:hover {
-    background: #10D97D; }
-
-#loader, #results-success, #results-error {
-  display: none; }
+  background: #3C3C62;
+}
+.btn:hover {
+  background: #0CD97E;
+}
+#loader,
+#results-success,
+#results-error {
+  display: none;
+}

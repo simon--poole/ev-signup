@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="assets/style.css"  media="screen,projection"/>
-        <link rel="icon" type="image/png" href="assets/favicon.png"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>
-            Eventvods - Beta Application
-        </title>
-    </head>
-    <body>
-        <div id="modal" class="modal">
-            <div class="modal-title modal-content">
-                <h4 class="flow-text">
+
+<head>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="assets/style.css" media="screen,projection" />
+	<link rel="icon" type="image/png" href="assets/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Eventvods - Beta Application
+	</title>
+</head>
+
+<body>
+	<div class="modal" id="modal">
+		<img class="modal-logo" src="assets/logo.png" />
+		<div class="modal-wrapper z-depth-4">
+			<div class="modal-title modal-content">
+				<h4 class="flow-text">
                     Beta Tester Application
                 </h4>
-            </div>
-            <div class="modal-content flow-text">
-                <form class="row" id="form" novalidate>
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" tabindex="1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required/>
-                        <label for="email">
+			</div>
+			<div class="modal-content flow-text">
+				<form class="row" id="form" novalidate>
+					<div class="input-field col s12">
+						<input id="email" type="email" class="validate" tabindex="1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required/>
+						<label for="email">
                             Email Address
                         </label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea id="comments" class="materialize-textarea" tabindex="2" length="500" max="500"></textarea>
-                        <label for="comments">
+					</div>
+					<div class="input-field col s12">
+						<textarea id="comments" class="materialize-textarea" tabindex="2" length="500" max="500"></textarea>
+						<label for="comments">
                             Why should we pick you? (Optional)
                         </label>
-                    </div>
-                    <div class="input-field col s12">
-                        <p>
-                            <input type="checkbox" id="tos" tabindex="3" required/>
-                            <label for="tos">
+					</div>
+					<div class="input-field col s12">
+						<p>
+							<input type="checkbox" id="tos" tabindex="3" required/>
+							<label for="tos">
                                 I agree that Eventvods may send me occasional promotional emails.
                             </label>
-                        </p>
-                    </div>
-                    <div class="input-field col s12 center-align">
-                        <br />
-                        <button class="waves-effect waves-light btn" id="submit" tabindex="4">
+						</p>
+					</div>
+					<div class="input-field col s12 center-align">
+						<br />
+						<button class="waves-effect waves-light btn" id="submit" tabindex="4">
                             <i class="material-icons right">
                                 send
                             </i>
                             Submit
                         </button>
-                    </div>
-                </form>
-                <div class="row" id="loader">
-                    <div class="col s12 center-align">
-                        <br />
-                        <div class="preloader-wrapper big active">
-                            <div class="spinner-layer spinner-blue-only">
-                                <div class="circle-clipper left">
-                                    <div class="circle">
-                                    </div>
-                                </div>
-                                <div class="gap-patch">
-                                    <div class="circle">
-                                    </div>
-                                </div>
-                                <div class="circle-clipper right">
-                                    <div class="circle">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="results-success">
-                    <div class="col s12 center-align">
-                        <h4>
+					</div>
+				</form>
+				<div class="row" id="loader">
+					<div class="col s12 center-align">
+						<br />
+						<div class="preloader-wrapper big active">
+							<div class="spinner-layer spinner-blue-only">
+								<div class="circle-clipper left">
+									<div class="circle">
+									</div>
+								</div>
+								<div class="gap-patch">
+									<div class="circle">
+									</div>
+								</div>
+								<div class="circle-clipper right">
+									<div class="circle">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row" id="results-success">
+					<div class="col s12 center-align">
+						<h4>
                             Thank you for applying
                         </h4>
-                        <p>
-                            Please check your email for a confirmation email.
-                        </p>
-                    </div>
-                </div>
-                <div class="row" id="results-error">
-                    <div class="col s12 center-align">
-                        <h4>
+						<p>
+							Please check your email for a confirmation email.
+						</p>
+					</div>
+				</div>
+				<div class="row" id="results-error">
+					<div class="col s12 center-align">
+						<h4>
                             Oops! Something broke!
                         </h4>
-                        <p>
-                            Something went wrong submitting your application. Please
-                            <a href="/beta">
+						<p>
+							Something went wrong submitting your application. Please
+							<a href="/beta">
                                 try again
-                            </a>
-                            , or if the error persists
-                            <a href="https://www.reddit.com/message/compose/?to=/r/eventvods">
+                            </a> , or if the error persists
+							<a href="https://www.reddit.com/message/compose/?to=/r/eventvods">
                                 get in contact
-                            </a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script type="text/javascript" src="bower_components/jquery/dist//jquery.min.js">
-    </script>
-    <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js">
-    </script>
-    <script type="text/javascript" src="assets/script.js">
-    </script>
+                            </a> .
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/jquery/dist//jquery.min.js">
+</script>
+<script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js">
+</script>
+<script type="text/javascript" src="assets/script.js">
+</script>
+
 </html>

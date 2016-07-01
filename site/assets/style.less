@@ -1,0 +1,101 @@
+@accent-green: #0CD97E;
+@accent-white: #fff;
+@default-blue: #3C3C62;
+.box-shadow-none() {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+body {
+	background: @default-blue;
+}
+
+.modal {
+	border-radius: 0;
+	overflow-y: visible;
+	max-height: none;
+	background: transparent;
+	.box-shadow-none();
+	text-align: center;
+	> img {
+		margin: auto;
+		max-height: 100px;
+	}
+	> .modal-wrapper {
+		background: @accent-white;
+		border-bottom: 5px solid @accent-green;
+		color: @default-blue;
+		text-align: left;
+		> .modal-title {
+			background: @default-blue;
+			color: @accent-white;
+			> h4 {
+				margin-bottom: 0;
+			}
+		}
+	}
+	h5 {
+		padding-bottom: 20px;
+	}
+	.buttons {
+		padding-top: 25px;
+	}
+	.btn {
+		width: 100%;
+		font-size: 18px;
+		background: @accent-green;
+		&.modal-close {
+			background: @default-blue;
+		}
+	}
+	label {
+		color: @default-blue;
+	}
+	.input-field label.click-through {
+		pointer-events: none;
+	}
+	p label.snug {
+		top: -30px;
+		&.left {
+			float: left;
+		}
+		&.right {
+			float: right;
+		}
+		&:before {
+			top: 2px!important;
+		}
+		&:after {
+			top: 2px!important;
+			border-color: @accent-green;
+			background-color: @accent-green;
+		}
+	}
+}
+
+.lean-overlay {
+	background: url("modal.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.input-field label {
+	text-transform: uppercase;
+	color: @default-blue;
+}
+
+.btn {
+	background: @default-blue;
+	&:hover {
+		background: @accent-green;
+	}
+}
+
+#loader,
+#results-success,
+#results-error {
+	display: none;
+}
