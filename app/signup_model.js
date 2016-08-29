@@ -30,6 +30,7 @@ var signupSchema = mongoose.Schema({
 
 var validator = {
     email: 'required|email',
+	name: 'required',
     comments: 'max:500'
 };
 

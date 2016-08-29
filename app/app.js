@@ -44,13 +44,6 @@ express.get('/verify/:id/:code', function(req, res) {
         else res.send('Invalid verification code. Please double check your email for the correct link.');
     });
 });
-express.get('/test/', function(req, res){
-    Signups.email({
-        "email": "simon__poole@hotmail.com",
-        "_id": "testing_id",
-        "code": "codetest"
-    });
-});
 express.listen(process.env.PORT);
 mongoose.connect(process.env.DB);
 mongoose.connection.on('error', (err) => {
