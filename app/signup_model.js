@@ -58,7 +58,7 @@ module.exports.email = function(doc) {
     codePersonalization.substitutions = codePersonalization.substitions;
     codePersonalization.addTo(to);
 	namePersonalization = new helper.Personalization();
-    namePersonalization.addSubstitution(verifyemail);
+    namePersonalization.addSubstitution(name);
     namePersonalization.substitutions = namePersonalization.substitions;
     namePersonalization.addTo(to);
     mail.setSubject(subject);

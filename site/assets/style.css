@@ -77,6 +77,10 @@ body {
   text-transform: uppercase;
   color: #3C3C62;
 }
+.input-field input:not([type="checkbox"]),
+.input-field textarea {
+  border-bottom: 1px solid #3C3C62;
+}
 .input-field input:not([type="checkbox"]):focus,
 .input-field textarea:focus {
   border-bottom: 1px solid #0ff78d !important;
