@@ -5,6 +5,10 @@ var helper = require('sendgrid').mail;
 var sg = require('sendgrid').SendGrid(process.env.SENDGRID);
 var q = require('q');
 var signupSchema = mongoose.Schema({
+	name: {
+		type: String,
+		required: true
+	},
     email: {
         type: String,
         required: true
@@ -36,7 +40,7 @@ module.exports.validate = function(data) {
 };
 module.exports.email = function(doc) {
     var promise = q.defer();
-    var from, to, subject, html, plain, mail, json, request, verifyemail, personalization, url, tracking;
+    var from, to, subject, html, plain, mail, json, request, verifyemail, name, codePersonalization, url, tracking, namePersonalization;
     from = new helper.Email("no-reply@mailer.eventvods.com", "Eventvods");
     to = new helper.Email(doc.email);
     subject = "Eventvods.com Email Confirmation";
@@ -46,14 +50,20 @@ module.exports.email = function(doc) {
     mail.setTemplateId("0a91c12e-0a74-4608-bd09-8e65c0fc3508");//confirmation email
     url = "http://ev-signup.herokuapp.com/verify/" + doc._id + "/" + doc.code;
     verifyemail = new helper.Substitution("-verifyurl-", url);
+	name = new helper.Substitution("-name-", doc.name);
     tracking = new helper.ClickTracking(true, true);
-    personalization = new helper.Personalization();
-    personalization.addSubstitution(verifyemail);
-    personalization.substitutions = personalization.substitions;
-    personalization.addTo(to);
+    codePersonalization = new helper.Personalization();
+    codePersonalization.addSubstitution(verifyemail);
+    codePersonalization.substitutions = codePersonalization.substitions;
+    codePersonalization.addTo(to);
+	namePersonalization = new helper.Personalization();
+    namePersonalization.addSubstitution(verifyemail);
+    namePersonalization.substitutions = namePersonalization.substitions;
+    namePersonalization.addTo(to);
     mail.setSubject(subject);
     mail.setFrom(from);
-    mail.addPersonalization(personalization);
+    mail.addPersonalization(codePersonalization);
+	mail.addPersonalization(namePersonalization);
     mail.addContent(plain);
     mail.addContent(html);
     mail.addTrackingSettings(tracking);

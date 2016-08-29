@@ -13,11 +13,12 @@ body {
 }
 .modal > img {
   margin: auto;
+  margin-bottom: 20px;
   max-height: 100px;
 }
 .modal > .modal-wrapper {
   background: #fff;
-  border-bottom: 5px solid #0CD97E;
+  border-bottom: 5px solid #0ff78d;
   color: #3C3C62;
   text-align: left;
 }
@@ -37,7 +38,7 @@ body {
 .modal .btn {
   width: 100%;
   font-size: 18px;
-  background: #0CD97E;
+  background: #0ff78d;
 }
 .modal .btn.modal-close {
   background: #3C3C62;
@@ -62,8 +63,8 @@ body {
 }
 .modal p label.snug:after {
   top: 2px!important;
-  border-color: #0CD97E;
-  background-color: #0CD97E;
+  border-color: #0ff78d;
+  background-color: #0ff78d;
 }
 .lean-overlay {
   background: url("modal.jpg");
@@ -76,11 +77,24 @@ body {
   text-transform: uppercase;
   color: #3C3C62;
 }
+.input-field input:not([type="checkbox"]):focus,
+.input-field textarea:focus {
+  border-bottom: 1px solid #0ff78d !important;
+  box-shadow: 0 1px 0 0 #0ff78d !important;
+}
+.input-field input:not([type="checkbox"]):focus + label,
+.input-field textarea:focus + label {
+  color: #0ff78d !important;
+}
+.input-field input[type="checkbox"]:checked + label:before {
+  border-right: 2px solid #0ff78d !important;
+  border-bottom: 2px solid #0ff78d !important;
+}
 .btn {
   background: #3C3C62;
 }
 .btn:hover {
-  background: #0CD97E;
+  background: #0ff78d;
 }
 #loader,
 #results-success,

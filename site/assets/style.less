@@ -1,6 +1,7 @@
-@accent-green: #0CD97E;
+@accent-green: #0ff78d;
 @accent-white: #fff;
 @default-blue: #3C3C62;
+
 .box-shadow-none() {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -20,6 +21,7 @@ body {
 	text-align: center;
 	> img {
 		margin: auto;
+		margin-bottom: 20px;
 		max-height: 100px;
 	}
 	> .modal-wrapper {
@@ -85,6 +87,22 @@ body {
 .input-field label {
 	text-transform: uppercase;
 	color: @default-blue;
+}
+.input-field {
+	input:not([type="checkbox"]), textarea {
+		border-bottom: 1px solid @default-blue;
+	}
+	input:not([type="checkbox"]):focus, textarea:focus {
+		border-bottom: 1px solid @accent-green!important;
+    	box-shadow: 0 1px 0 0 @accent-green!important;
+		& + label {
+			color: @accent-green!important;
+		}
+	}
+	input[type="checkbox"]:checked + label:before {
+		border-right: 2px solid @accent-green!important;
+		border-bottom: 2px solid @accent-green!important;
+	}
 }
 
 .btn {

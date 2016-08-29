@@ -9,6 +9,13 @@ $( document )
         $( '#form' )
             .submit( function( evt ) {
                 evt.preventDefault();
+				if ( !$( '#name' )[ 0 ].checkValidity() ) {
+                    $( 'body' )
+                        .scrollTo( '#name' );
+                    $( '#name' )
+                        .focus();
+                    return;
+                }
                 if ( !$( '#email' )[ 0 ].checkValidity() ) {
                     $( 'body' )
                         .scrollTo( '#email' );
@@ -28,7 +35,9 @@ $( document )
                     .slideDown();
                 var data = {
                     email: $( '#email' )
-                        .val()
+                        .val(),
+					name: $('#name')
+						.val()
                 }
                 var comments = $( '#comments' )
                     .val();
@@ -44,8 +53,7 @@ $( document )
                         $( '#results-success' )
                             .slideDown();
                     } )
-                    .fail( function( res ) {
-                        console.log( res );
+                    .fail( function() {
                         $( '#loader' )
                             .slideUp();
                         $( '#results-error' )

@@ -24,6 +24,12 @@
 			<div class="modal-content flow-text">
 				<form class="row" id="form" novalidate>
 					<div class="input-field col s12">
+						<input id="name" type="text" class="validate" tabindex="1" max="50" required/>
+						<label for="email">
+                            Name
+                        </label>
+					</div>
+					<div class="input-field col s12">
 						<input id="email" type="email" class="validate" tabindex="1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required/>
 						<label for="email">
                             Email Address
@@ -39,7 +45,8 @@
 						<p>
 							<input type="checkbox" id="tos" tabindex="3" required/>
 							<label for="tos">
-                                I agree that Eventvods may send me occasional promotional emails.
+                                I agree that Eventvods may send me occasional promotional emails.<br />
+								Don't worry, we'll never spam you.
                             </label>
 						</p>
 					</div>
