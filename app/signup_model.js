@@ -41,7 +41,7 @@ module.exports.validate = function(data) {
 };
 module.exports.email = function(doc) {
     var promise = q.defer();
-    var from, to, subject, html, plain, mail, json, request, verifyemail, name, codePersonalization, url, tracking, namePersonalization;
+    var from, to, subject, html, plain, mail, json, request, verifyemail, name, personalization, url, tracking, namePersonalization;
     from = new helper.Email("no-reply@mailer.eventvods.com", "Eventvods");
     to = new helper.Email(doc.email);
     subject = "Eventvods.com Email Confirmation";
@@ -53,18 +53,15 @@ module.exports.email = function(doc) {
     verifyemail = new helper.Substitution("-verifyurl-", url);
 	name = new helper.Substitution("-name-", doc.name);
     tracking = new helper.ClickTracking(true, true);
-    codePersonalization = new helper.Personalization();
-    codePersonalization.addSubstitution(verifyemail);
-    codePersonalization.substitutions = codePersonalization.substitions;
-    codePersonalization.addTo(to);
-	namePersonalization = new helper.Personalization();
-    namePersonalization.addSubstitution(name);
-    namePersonalization.substitutions = namePersonalization.substitions;
-    namePersonalization.addTo(to);
+    personalization = new helper.Personalization();
+    personalization.addSubstitution(verifyemail);
+	personalization.addSubstitution(name);
+	//don't know why, but removing this makes the API call fail
+    personalization.substitutions = personalization.substitions;
+    personalization.addTo(to);
     mail.setSubject(subject);
     mail.setFrom(from);
-    mail.addPersonalization(codePersonalization);
-	mail.addPersonalization(namePersonalization);
+    mail.addPersonalization(personalization);
     mail.addContent(plain);
     mail.addContent(html);
     mail.addTrackingSettings(tracking);
