@@ -49,7 +49,7 @@ module.exports.email = function(doc) {
     plain = new helper.Content("text/plain", "Eventvods");
     mail = new helper.Mail();
     mail.setTemplateId("0a91c12e-0a74-4608-bd09-8e65c0fc3508");//confirmation email
-    url = "http://ev-signup.herokuapp.com/verify/" + doc._id + "/" + doc.code;
+    url = "http://signup.eventvods.com/verify/" + doc._id + "/" + doc.code;
     verifyemail = new helper.Substitution("-verifyurl-", url);
 	name = new helper.Substitution("-name-", doc.name);
     tracking = new helper.ClickTracking(true, true);
